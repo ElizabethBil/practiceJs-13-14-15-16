@@ -47,7 +47,8 @@ const quantityRange = document.querySelector("#quantity");
 const totalPriceMess = document.querySelector(".total");
 const amount = document.querySelector(".amount");
 
-const calculator = () => {
+const calculator = (event) => {
+  event.preventDefault();
   const priceValue = price.value;
   const quantityValue = quantityRange.value;
   amount.textContent = quantityValue;
@@ -56,4 +57,29 @@ const calculator = () => {
   totalPriceMess.textContent = totalPrice;
 };
 
-form.addEventListener("input", calculator);
+const amountValue = () => {
+  const quantityValue = quantityRange.value;
+  amount.textContent = quantityValue;
+};
+
+form.addEventListener("submit", calculator);
+form.addEventListener("input", amountValue);
+
+// 2.2 ПЕРЕПИШІТЬ КОД , ЩОБ ЗНАЧЕННЯ МИ ОТРИМУВАЛИ ПО КЛІЦІ НА КНОПКУ , ПРИ НАЖАТТІ ЯКОГО БУДЕ ВАМ РАХУВАТИ ТА ВИВОДИТИ РЕЗУЛЬТАТ НА ЕКРАН
+
+const calculateBtn = document.querySelector(".btn");
+
+// 2.3 НАПИШІТЬ  РАНДОМНИЙ КОЛІР ДЛЯ НАШОЇ ФОРМИ КОЛЬКУЛЯТОРА ЗА ДОПОМОГОЮ ІНЛАЙНОВОГО СТИЛЮ
+
+const randomRgbColor = () => {
+  const r = Math.round(Math.random() * (255 - 1) + 1);
+  const g = Math.round(Math.random() * (255 - 1) + 1);
+  const b = Math.round(Math.random() * (255 - 1) + 1);
+  return `rgb(${r},${g},${b})`;
+};
+
+const formContainer = document.querySelector(".container");
+
+const color = randomRgbColor();
+
+formContainer.style.backgroundColor = color;
