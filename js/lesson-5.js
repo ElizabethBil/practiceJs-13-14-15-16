@@ -9,3 +9,5 @@
 // Методи для виконання домашнього завдання:
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight
 // https://developer.mozilla.org/ru/docs/Web/API/Window/scrollY
+
+// Ментор 0962153975
